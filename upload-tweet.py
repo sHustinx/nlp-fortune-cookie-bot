@@ -2,6 +2,12 @@
 """
 Created on Wed Oct 12 21:25:09 2022
 
+
+- Authentication of bot-account via tweepy
+- loading pre-trained checkpoint from disk
+- generating and postprocessing tweets
+- posting tweet
+
 @author: Saskia Hustinx
 """
 import re

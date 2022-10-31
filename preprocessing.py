@@ -2,6 +2,10 @@
 """
 Created on Wed Oct 12 15:42:35 2022
 
+- lowercasing input data
+- removal of filtered words
+- conversion ot single-column csv for training
+
 @author: Saskia Hustinx
 """
 

@@ -4,8 +4,8 @@ Created on Mon Oct 24 13:12:59 2022
 
 @author: Saskia Hustinx
 
-- avg len
-- most frequent words per category
+- general linguistic analysis, word lenght etc,
+- most frequent words/n-grams per category
 - sentiment
 
 https://towardsdatascience.com/text-analysis-feature-engineering-with-nlp-502d6ea9225d
