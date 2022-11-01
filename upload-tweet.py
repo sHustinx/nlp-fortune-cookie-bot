@@ -50,16 +50,16 @@ tf.config.set_visible_devices([], 'GPU')
 sess = gpt2.start_tf_sess()
 gpt2.load_gpt2(sess, run_name='run2')
 
-filter_list = ['victim', 'abuse', 'sex', 'planetary', 'celestial']
+filter_list = ['astral', 'celestial', 'victim', 'abuse', 'sex', 'planetary']
 
 def generate_tweets():
     
-    texts = gpt2.generate(sess, run_name='run2', temperature=0.85, length=50, nsamples=10, return_as_list=True)
+    texts = gpt2.generate(sess, run_name='run2', temperature=0.85, length=50, nsamples=8, return_as_list=True)
     res = []
     
     for text in texts:
         match = re.findall('<|startoftext|>(.*?[\.\?!])', text)
-        if len(match) == 3 and 40 < len(match[2]) < 140:
+        if len(match) == 3 and len(match[2]) > 40 and len(match[2]) < 140:
             if not words_in_string(filter_list, match[2]):
                 res.append(match[2])
         
@@ -73,6 +73,7 @@ while len(res_tweets) == 0:
     res_tweets = generate_tweets()
 
 
+#print(res_tweets)
 api = api()
 tweet_message(api, random.choice(res_tweets))
 
